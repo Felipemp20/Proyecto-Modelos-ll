@@ -31,36 +31,7 @@ PrediCasa/
 ├── requirements.txt
 └── README.md
 ```
- 
-## Cómo reproducir los resultados
- 
-### 1. Descargar los datos
-1. Crea una cuenta en [Kaggle](https://www.kaggle.com) e ingresa a la [competencia](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data). Si te lo pide, pulsa *Join Competition* y acepta las reglas.
-2. Descarga `train.csv` y guárdalo en `data/train.csv`.
-### 2a. Ejecutar localmente (Python 3.9 o superior)
-```bash
-git clone <URL-de-este-repositorio>
-cd PrediCasa
-python -m venv .venv
-source .venv/bin/activate        # En Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-jupyter notebook PrediCasa_EDA.ipynb
-```
-Luego ejecuta todas las celdas (*Run All*).
- 
-### 2b. Ejecutar en Google Colab (sin instalar nada)
-1. En [colab.research.google.com](https://colab.research.google.com) elige *Archivo → Subir cuaderno* y sube `PrediCasa_EDA.ipynb`.
-2. En el panel de archivos (ícono de carpeta) sube `train.csv`.
-3. *Entorno de ejecución → Ejecutar todo*.
-### Resultados generados
-Al terminar, el notebook crea:
-- `figures/01_saleprice_distribucion.png`
-- `figures/02_nulos.png`
-- `figures/03_correlacion_top15.png`
-- `figures/04_heatmap_correlacion.png`
-- `figures/05_variables_clave.png`
-- `figures/06_precio_por_barrio.png`
-- `data/train_preprocesado.csv` (1460 × 256), usado en la siguiente entrega.
+
 ## Contenido del notebook (Entregable I)
  
 1. Carga de datos (tratando `NA` como ausencia de la característica donde corresponde).
@@ -73,7 +44,8 @@ Al terminar, el notebook crea:
 8. Preprocesamiento: imputación y codificación.
 9. Definición de la aproximación de ML.
 10. Conclusiones.
-## Resultados principales del EDA
+
+## Resultados principales
  
 - `SalePrice`: media USD 180 921, mediana USD 163 000, asimetría 1.88 → se modelará `log(1 + SalePrice)`.
 - 19 columnas con nulos; en la mayoría `NA` significa que la vivienda no tiene la característica (piscina, callejón, garaje, sótano, etc.).
@@ -81,9 +53,6 @@ Al terminar, el notebook crea:
 - Multicolinealidad (r > 0.8): `GarageCars`–`GarageArea`, `YearBuilt`–`GarageYrBlt`, `GrLivArea`–`TotRmsAbvGrd`, `TotalBsmtSF`–`1stFlrSF`.
 - Dos valores atípicos (`Id` 524 y 1299) que se eliminarán antes del entrenamiento.
 - Tras el preprocesamiento: 1460 × 256 (255 predictores) sin valores nulos.
-## Próximos pasos
- 
-Entregable II: eliminar atípicos, dividir en entrenamiento/validación, comparar modelos lineales regularizados (Ridge, Lasso, Elastic Net) y de ensamble (Random Forest, Gradient Boosting, XGBoost) con validación cruzada y RMSLE.
  
 ## Referencias
  
