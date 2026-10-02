@@ -21,13 +21,13 @@ Compradores, vendedores y agentes inmobiliarios suelen fijar el precio de una vi
  
 ```
 PrediCasa/
-├── PrediCasa_EDA.ipynb          # Entregable I: análisis exploratorio y preprocesamiento
+├── PrediCasa.ipynb          
 ├── reporte/
-│   ├── PrediCasa_Entregable1.pdf  # Informe del Entregable I (formato IEEE)
-│   ├── PrediCasa_Entregable1.tex  # Fuente LaTeX del informe
-│   └── fig_corr.png               # Figura usada en el informe
-├── data/                        # Aquí va train.csv (no versionado)
-├── figures/                     # Figuras que genera el notebook
+│   ├── PrediCasa.pdf  
+│   ├── PrediCasa.tex  
+│   └── Correlacion.png               
+├── data/                        
+├── figures/                     
 ├── requirements.txt
 └── README.md
 ```
